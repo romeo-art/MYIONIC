@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
+import { NotLoginISearchPageRoutingModule } from './not-login-i-search-routing.module';
 
-import { FolderPage } from './folder.page';
-
+import { NotLoginISearchPage } from './not-login-i-search.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule,
- 
+    NotLoginISearchPageRoutingModule
   ],
-  declarations: [FolderPage]
+  declarations: [NotLoginISearchPage]
 })
-export class FolderPageModule {}
+export class NotLoginISearchPageModule {}

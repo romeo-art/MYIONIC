@@ -1,0 +1,36 @@
+#logoHeader{
+    margin-left: 15%;
+    margin-right: 15%;
+    width: auto;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+ion-header{
+    background: #225622;
+    border-style: none;
+    box-shadow: 0px 2px 5px rgb(109, 109, 109);
+}
+
+.isearch_logo{
+    max-width: auto;
+    max-height: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+     
+}
+
+@media (orientation: landscape) {
+    #logoHeader{
+        display: none;
+    }
+}
+
+@media (orientation: portrait) {
+    .titleHeader{
+        display: none;
+    }
+}
+

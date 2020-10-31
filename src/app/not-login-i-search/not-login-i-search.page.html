@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>notLogin_iSearch</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="logForm">
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="firstname" name="firstname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="lastname" name="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email Address</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Confirm Password</ion-label>
+      <ion-input type="password" [(ngModel)]="confirm_password" name="confirm_password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Are you a Philexport Cebu Member?</ion-label>
+      <ion-select [(ngModel)]="isMember" [ngModelOptions]="{standalone: true}">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Organization</ion-label>
+      <ion-input type="text" [(ngModel)]="organization" name="organization"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sector</ion-label>
+      <ion-input type="text" [(ngModel)]="sector" name="sector"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Address</ion-label>
+      <ion-input type="text" [(ngModel)]="address" name="adress"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contact Number</ion-label>
+      <ion-input type="number" [(ngModel)]="contact_number" name="contact_number"></ion-input>
+    </ion-item>
+    <ion-label>Please select your Email Alerts for Market Highlights & Events</ion-label>
+    <ion-select multiple="true" cancelText="Dismiss" okText="Ok" [(ngModel)]="email_alerts" [ngModelOptions]="{standalone: true}">
+      <ion-select-option value="Holiday Decor">Holiday Decor</ion-select-option>
+      <ion-select-option value="Custom Jewelry">Custom Jewelry</ion-select-option>
+      <ion-select-option value="Footwear">Footwear</ion-select-option>
+      <ion-select-option value="'Furniture'">Furniture</ion-select-option>
+      <ion-select-option value="Houseware">Houseware</ion-select-option>
+      <ion-select-option value="Leathergoods">Leathergoods</ion-select-option>
+      <ion-select-option value="Health and Wellness">Health and Wellness</ion-select-option>
+      <ion-select-option value="International Trade Issues">International Trade Issues</ion-select-option>
+      <ion-select-option value="Others">Others</ion-select-option>
+    </ion-select>
+    <ion-label>Free SMS Alerts on Market Highlights & Events</ion-label>
+    <ion-select multiple="true" cancelText="Dismiss" okText="Ok" [(ngModel)]="sms_alerts" [ngModelOptions]="{standalone: true}">
+      <ion-select-option value="Holiday Decor">Holiday Decor</ion-select-option>
+      <ion-select-option value="Custom Jewelry">Custom Jewelry</ion-select-option>
+      <ion-select-option value="Footwear">Footwear</ion-select-option>
+      <ion-select-option value="Furniture">Furniture</ion-select-option>
+      <ion-select-option value="Houseware">Houseware</ion-select-option>
+      <ion-select-option value="Leathergoods">Leathergoods</ion-select-option>
+      <ion-select-option value="Health and Wellness">Health and Wellness</ion-select-option>
+      <ion-select-option value="International Trade Issues">International Trade Issues</ion-select-option>
+      <ion-select-option value="Others">Others</ion-select-option>
+    </ion-select>
+  </form>
+  <ion-button type="submit" (click)="onSubmit(logForm)">Register</ion-button>
+</ion-content>

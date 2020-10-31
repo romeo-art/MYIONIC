@@ -11,39 +11,61 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
+  public toShow = false;
+
   public appPages = [
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+      title: 'Home',
+      url: '/folder/Home',
+      // icon: 'Home'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+      title: 'Events',
+      url: '/folder/Events',
+      // icon: 'calendar'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+      title: 'Training',
+      url: '/folder/Training',
+      // icon: 'teaching'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Services',
+      url: '/folder/Services',
+      // icon: 'archive'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
+      title: 'News',
+      url: '/folder/News',
+      // icon: 'trash'
     },
     {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
-    }
+      title: 'iSearch',
+      url: '/i-search',
+      // icon: 'warning'
+    },
+    {
+      title: 'Membership',
+      url: '/folder/Membership',
+      // icon: 'warning'
+    },
+    {
+      title: 'About us',
+      url: '/folder/About us',
+      // icon: 'warning'
+    },
+    {
+      title: 'Careers',
+      url: '/folder/Careers',
+      // icon: 'warning'
+    },
+    {
+      title: 'Gallery',
+      url: '/folder/Gallery',
+      // icon: 'warning'
+    },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
@@ -54,6 +76,7 @@ export class AppComponent implements OnInit {
   }
 
   initializeApp() {
+    // console.log("Selected Index: " + this.selectedIndex)
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
@@ -65,5 +88,22 @@ export class AppComponent implements OnInit {
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+    console.log("Path: " + path)
+      console.log("Selected Index: " + this.selectedIndex)
   }
+
+  showISearchChild(){
+    if(this.appPages[this.selectedIndex].title === 'iSearch'){
+      console.log("yes ISearch")
+    }
+    else{
+      console.log("not iSearch")
+    }
+  }
+
+  showSample(){
+    console.log("HOOOOOOOIIIIIII!!!!!!!!!!!!!!!")
+    this.toShow = true;
+  }
+
 }
