@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { User } from 'models/user_Model';
 import { AppServiceService } from '../app-service.service';
 import User from '../model/userModel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-not-login-i-search',
@@ -25,7 +26,7 @@ export class NotLoginISearchPage implements OnInit {
   email_alerts;
   sms_alerts;
 
-  constructor(private appService: AppServiceService) { }
+  constructor(private appService: AppServiceService, private router: Router) { }
 
 
   ngOnInit() {
@@ -58,14 +59,15 @@ export class NotLoginISearchPage implements OnInit {
     //   }
     // )
 
-    if (this.password === this.confirm_password) {
+    // if (this.password === this.confirm_password) {
       this.appService.create_user('create_user', sampleUser)
         .subscribe(res => {
           console.log("Saved data: " + JSON.stringify(res))
         })
-    }else{
-      alert("Your password did not matched!")
-    }
+        this.router.navigate(['/i-search']);
+    // }else{
+    //   alert("Your password did not matched!")
+    // }
     // this.create_user;
   }
 

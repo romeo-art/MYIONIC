@@ -16,11 +16,15 @@ const routes: Routes = [
     loadChildren: () => import('./i-search/i-search.module').then( m => m.ISearchPageModule)
   },   {
     path: 'not-login-i-search',
-    loadChildren: () => import('./not-login-i-search/not-login-i-search.module').then( m => m.NotLoginISearchPageModule)
+    loadChildren: () => import('./sign_up/not-login-i-search.module').then( m => m.NotLoginISearchPageModule)
   },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
 
 ];
